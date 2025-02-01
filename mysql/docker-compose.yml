@@ -11,6 +11,15 @@ services:
       - "3306:3306"
     volumes:
       - mysql_data:/var/lib/mysql
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 1GB
+      restart_policy:
+        condition: unless-stopped
+    logging:
+      driver: "journald"
 networks:
   cluster-datos:
     external: true
