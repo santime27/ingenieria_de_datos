@@ -48,6 +48,8 @@ services:
       - "3306:3306"
     volumes:
       - mysql_data:/var/lib/mysql
+    networks:
+      - cluster-datos
     deploy:
       resources:
         limits:
