@@ -40,7 +40,7 @@ Para el despliegue de la base de datos mysql, se va a utilizar la imagen oficial
 ```yaml
 version: '1'
 services:
-  bd-mysql-1:
+  bd-mysql:
     image: mysql:latest
     environment:
       MYSQL_DATABASE: bdnegocio
