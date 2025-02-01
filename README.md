@@ -33,6 +33,31 @@ docker network create -d bridge --subnet 10.240.1.0/24 --gateway 10.240.1.254 cl
 
 la red se llamara "clsuter-datos" y tendra asociada una ip de red con el siguiente CIDR: 10.240.1.0/24, ademas, se asigna una puerta de enlace con la ip: 10.240.1.254
 
+## Despliegue base de datos mysql
+
+Para el despliegue de la base de datos mysql, se va a utilizar la imagen oficial de mysql en su ultima version, para ello se tiene destinado el archivo docker-compose.yml, el cual se encuentra en el directorio "mysql".
+
+```yaml
+version: '1'
+services:
+  bd-mysql-1:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQLPASS}
+      MYSQL_DATABASE: bdnegocio
+      MYSQL_USER: santi
+      MYSQL_PASSWORD: ${MYSQLPASS}
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+networks:
+  cluster-datos:
+    external: true
+volumes:
+  mysql_data:
+```
+
 
 
 

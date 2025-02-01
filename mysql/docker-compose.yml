@@ -5,7 +5,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQLPASS}
       MYSQL_DATABASE: bdnegocio
-      MYSQL_USER: santiago
+      MYSQL_USER: santi
       MYSQL_PASSWORD: ${MYSQLPASS}
     ports:
       - "3306:3306"
