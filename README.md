@@ -41,6 +41,11 @@ Para el despliegue de la base de datos mysql, se va a utilizar la imagen oficial
 services:
   mysql:
     image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQLPASS}
+      MYSQL_DATABASE: bdnegocio
+      MYSQL_USER: santi
+      MYSQL_PASSWORD: ${MYSQLPASS}
     container_name: mysql-db-1
     ports:
       - "3306:3306"
