@@ -64,7 +64,10 @@ volumes:
   mysql_data:
 ```
 
+Por ultimo, para lanzar este docker compose, se debe estar ubicado en el directorio "mysql" y ejecutar el siguiente comando:
 
-
+```bash
+MYSQL_ROOT_PASSWORD=$MYSQLPASS docker compose up -d
+```
 
 
