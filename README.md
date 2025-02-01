@@ -46,7 +46,6 @@ services:
       MYSQL_DATABASE: bdnegocio
       MYSQL_USER: santi
       MYSQL_PASSWORD: ${MYSQLPASS}
-      MYSQL_DATABASE: bdnegocio
     container_name: mysql-db-1
     ports:
       - "3306:3306"
