@@ -1,8 +1,9 @@
 services:
-  bd-mysql-1:
+  mysql:
     image: mysql:latest
     environment:
       MYSQL_DATABASE: bdnegocio
+    container_name: mysql-db-1
     ports:
       - "3306:3306"
     volumes:

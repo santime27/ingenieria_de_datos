@@ -38,12 +38,12 @@ la red se llamara "clsuter-datos" y tendra asociada una ip de red con el siguien
 Para el despliegue de la base de datos mysql, se va a utilizar la imagen oficial de mysql en su ultima version, para ello se tiene destinado el archivo docker-compose.yml, el cual se encuentra en el directorio "mysql".
 
 ```yaml
-version: '1'
 services:
-  bd-mysql:
+  mysql:
     image: mysql:latest
     environment:
       MYSQL_DATABASE: bdnegocio
+    container_name: mysql-db-1
     ports:
       - "3306:3306"
     volumes:
