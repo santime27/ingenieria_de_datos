@@ -2,6 +2,7 @@ services:
   mysql:
     image: mysql:latest
     environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQLPASS}
       MYSQL_DATABASE: bdnegocio
     container_name: mysql-db-1
     ports:
