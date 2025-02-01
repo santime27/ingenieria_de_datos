@@ -43,10 +43,7 @@ services:
   bd-mysql-1:
     image: mysql:latest
     environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQLPASS}
       MYSQL_DATABASE: bdnegocio
-      MYSQL_USER: santi
-      MYSQL_PASSWORD: ${MYSQLPASS}
     ports:
       - "3306:3306"
     volumes:
@@ -60,6 +57,8 @@ services:
         condition: unless-stopped
     logging:
       driver: "journald"
+    environment:
+      - HOSTNAME=${HOSTNAME}-darktraceApi
 networks:
   cluster-datos:
     external: true
