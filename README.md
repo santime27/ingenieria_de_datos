@@ -57,8 +57,6 @@ services:
         condition: unless-stopped
     logging:
       driver: "journald"
-    environment:
-      - HOSTNAME=${HOSTNAME}-darktraceApi
 networks:
   cluster-datos:
     external: true
