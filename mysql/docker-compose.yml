@@ -1,6 +1,5 @@
-version: '1'
 services:
-  bd-mysql:
+  bd-mysql-1:
     image: mysql:latest
     environment:
       MYSQL_DATABASE: bdnegocio
