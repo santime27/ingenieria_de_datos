@@ -42,10 +42,10 @@ services:
   mysql:
     image: mysql:latest
     environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQLPASS}
+      MYSQL_ROOT_PASSWORD: "${MYSQLPASS}"
       MYSQL_DATABASE: bdnegocio
       MYSQL_USER: santi
-      MYSQL_PASSWORD: ${MYSQLPASS}
+      MYSQL_PASSWORD: "${MYSQLPASS}"
     container_name: mysql-db-1
     ports:
       - "3306:3306"
@@ -72,7 +72,7 @@ volumes:
 Por ultimo, para lanzar este docker compose, se debe estar ubicado en el directorio "mysql" y ejecutar el siguiente comando:
 
 ```bash
-MYSQL_ROOT_PASSWORD=$MYSQLPASS docker compose up -d
+docker compose up -d
 ```
 
 
