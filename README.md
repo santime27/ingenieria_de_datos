@@ -76,7 +76,3 @@ docker compose up -d
 ```
 
 
-MYSQL_ROOT_PASSWORD=${MYSQLPASS}
-MYSQL_DATABASE=bdnegocio
-MYSQL_USER=santi
-MYSQL_PASSWORD=${MYSQLPASS}
