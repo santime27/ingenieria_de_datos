@@ -3,25 +3,6 @@
 
 este reposisorio se creo con el fin de implementar un cluster de spark utilizando Docker, ademas tambien, se lanza una base de datos mysql.
 
-
-Inicialmente se van a crear las variables de entorno que almacenaran las contraseñas utilizadas para los diferentes servicios. Para ello, debemos añadir las variables de entorno en el archivo .bashrc o .bash_profile, utilizando algun editor de texto como nano o vim.
-```bash
-nano ~/.bashrc
-```
-se añaden las variables a lo ultimo del archivo y se ponen las contraseñas que deseen. En mi caso, utilizo la variable de entorno "MYSQLPASS".
-
-Luego de esto, se guarda el archivo y se ejecuta el siguiente comando para que las variables de entorno se activen.
-
-```bash
-source ~/.bashrc
-```
-
-se verifica que la variable de entorno se haya creado correctamente con el siguiente comando:
-
-```bash
-echo $MYSQLPASS
-```
-
 ## creacion de una red tipo bridge en docker
 
 
@@ -68,6 +49,18 @@ networks:
 volumes:
   mysql_data:
 ```
+
+Para utilizar las mejores practicas en cuanto a seguridad, se utilziaran variables de entorno para las contraseñas y los usuarios que utilizara la base de datos, para ello se debe crear un archivo llamado ".env" en el directorio "mysql" con el siguiente contenido:
+
+```text
+MYSQL_ROOT_PASSWORD="contraseña a utilizar"
+MYSQL_DATABASE=bdnegocio
+MYSQL_USER=santi
+MYSQL_PASSWORD="contraseña a utilizar"
+```
+
+en este archivo usted debe reemplazar "contraseña a utilizar" por la contraseña que desea utilizar para el usuario root y el usuario santi.
+
 
 Por ultimo, para lanzar este docker compose, se debe estar ubicado en el directorio "mysql" y ejecutar el siguiente comando:
 
