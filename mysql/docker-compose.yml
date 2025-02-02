@@ -2,7 +2,10 @@ services:
   mysql:
     image: mysql:latest
     environment:
-      MYSQL_ROOT_PASSWORD: "asffasf"
+      MYSQL_ROOT_PASSWORD: "${MYSQLPASS}"
+      MYSQL_DATABASE: bdnegocio
+      MYSQL_USER: santi
+      MYSQL_PASSWORD: "${MYSQLPASS}"
     container_name: mysql-db-1
     ports:
       - "3306:3306"
