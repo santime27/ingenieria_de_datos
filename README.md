@@ -56,7 +56,7 @@ MYSQL_USER=santi
 MYSQL_PASSWORD="contraseña a utilizar"
 ```
 
-en este archivo usted debe reemplazar "contraseña a utilizar" por la contraseña que desea utilizar para el usuario root y el usuario santi.
+NOTA: en este archivo usted debe reemplazar "contraseña a utilizar" y los nombres de usuario por los que usted requiera, ademas de hacerlo preferiblemente una vez clonado el repositorio y se encuentre en el servidor en donde se va a desplegar el cluster.
 
 
 Por ultimo, para lanzar este docker compose, se debe estar ubicado en el directorio "mysql" y ejecutar el siguiente comando:
