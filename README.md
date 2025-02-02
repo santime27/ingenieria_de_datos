@@ -56,7 +56,7 @@ MYSQL_USER=santi
 MYSQL_PASSWORD="contraseña a utilizar"
 ```
 
-NOTA: en este archivo usted debe reemplazar "contraseña a utilizar" y los nombres de usuario por los que usted requiera, ademas de hacerlo preferiblemente una vez clonado el repositorio y se encuentre en el servidor en donde se va a desplegar el cluster.
+NOTA: en este archivo usted debe reemplazar "contraseña a utilizar" y los nombres de usuario por los que usted requiera, ademas de hacerlo preferiblemente una vez clonado el repositorio y se encuentre en el servidor en donde se va a desplegar el cluster. Si por el contrario no se requiere utilizar las variables de entorno para las contraseñas y usted solo requiere poner las contraseñas "hardcodeadas" en el archivo docker-compose.yml, puede hacerlo sin problemas y se evita la creacion del archivo ".env".
 
 
 Por ultimo, para lanzar este docker compose, se debe estar ubicado en el directorio "mysql" y ejecutar el siguiente comando:
