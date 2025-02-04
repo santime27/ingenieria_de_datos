@@ -7,6 +7,8 @@ services:
     environment:
       AIRFLOW__CORE__SQL_ALCHEMY_CONN: ${STR_BD_CONN}
       AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      _AIRFLOW_WWW_USER_USERNAME: santiago
+      _AIRFLOW_WWW_USER_PASSWORD: santiMeneses2024
     networks:
       - cluster-datos
 
@@ -22,6 +24,8 @@ services:
       AIRFLOW__CORE__SQL_ALCHEMY_CONN: ${STR_BD_CONN}
       AIRFLOW__CORE__LOAD_EXAMPLES: False
       AIRFLOW__WEBSERVER__EXPOSE_CONFIG: True
+      _AIRFLOW_WWW_USER_USERNAME: santiago
+      _AIRFLOW_WWW_USER_PASSWORD: santiMeneses2024
     volumes:
       - ./dags:/data/airflow/dags
       - ./logs:/data/airflow/logs
@@ -42,6 +46,8 @@ services:
     environment:
       AIRFLOW__CORE__SQL_ALCHEMY_CONN: ${STR_BD_CONN}
       AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      _AIRFLOW_WWW_USER_USERNAME: santiago
+      _AIRFLOW_WWW_USER_PASSWORD: santiMeneses2024
     depends_on:
       - airflow-init
     networks:
