@@ -47,8 +47,8 @@ services:
     networks:
       - cluster-datos
 
-  networks:
-  cluster-datos:
-    external: true
+networks:
+cluster-datos:
+  external: true
 
     
