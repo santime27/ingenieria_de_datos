@@ -23,9 +23,9 @@ services:
       - AIRFLOW__CORE__LOAD_EXAMPLES: False
       - AIRFLOW__WEBSERVER__EXPOSE_CONFIG: True
     volumes:
-      - ./dags:/usr/local/airflow/dags
-      - ./logs:/usr/local/airflow/logs
-      - ./plugins:/usr/local/airflow/plugins
+      - ./dags:/data/airflow/dags
+      - ./logs:/data/airflow/logs
+      - ./plugins:/data/airflow/plugins
     ports:
       - "8080:8080"
     depends_on:
