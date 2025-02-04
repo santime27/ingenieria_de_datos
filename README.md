@@ -70,4 +70,6 @@ Por ultimo, para lanzar este docker compose, se debe estar ubicado en el directo
 docker compose up -d
 ```
 
+# APACHE AIRFLOW
 
+se deben tener creadas las carpetas "dags","logs","config","plugins" en un directorio llamado "airflow".
