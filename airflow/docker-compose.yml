@@ -3,7 +3,7 @@ services:
     image: apache/airflow:slim-2.10.4-python3.9
     env_file:
       - .env
-    entrypoint: ["/bin/bash", "-c", "pip install mysql-connector-python && airflow db init"]
+    entrypoint: ["/bin/bash", "-c", "pip install PyMySQL && airflow db init"]
     environment:
       AIRFLOW__CORE__SQL_ALCHEMY_CONN: ${STR_BD_CONN}
       AIRFLOW__CORE__EXECUTOR: LocalExecutor
@@ -16,7 +16,7 @@ services:
       - .env
     container_name: airflow_webserver
     restart: always
-    command: ["/bin/bash", "-c", "pip install mysql-connector-python && airflow webserver"]
+    command: ["/bin/bash", "-c", "pip install PyMySQL && airflow webserver"]
     environment:
       AIRFLOW__CORE__EXECUTOR: LocalExecutor
       AIRFLOW__CORE__SQL_ALCHEMY_CONN: ${STR_BD_CONN}
@@ -38,7 +38,7 @@ services:
     env_file:
       - .env
     restart: always
-    command: ["/bin/bash", "-c", "pip install mysql-connector-python && airflow scheduler"]
+    command: ["/bin/bash", "-c", "pip install PyMySQL && airflow scheduler"]
     environment:
       AIRFLOW__CORE__SQL_ALCHEMY_CONN: ${STR_BD_CONN}
       AIRFLOW__CORE__EXECUTOR: LocalExecutor
