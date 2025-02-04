@@ -23,7 +23,7 @@ services:
       AIRFLOW__CORE__LOAD_EXAMPLES: False
       AIRFLOW__WEBSERVER__EXPOSE_CONFIG: True
     volumes:
-      - ./dags:/data/ingenieria_de_datos/airflow/dags
+      - ./dags:/data/airflow/dags
       - ./logs:/data/airflow/logs
       - ./plugins:/data/airflow/plugins
     ports:
