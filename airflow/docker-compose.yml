@@ -3,7 +3,7 @@ services:
     image: apache/airflow:slim-2.10.4-python3.9
     env_file:
       - .env
-    entrypoint: ["/bin/bash", "-c", "airflow db init"]
+    entrypoint: ["/bin/bash", "-c", "pip install mysql-connector-python && airflow db init"]
     environment:
       AIRFLOW__CORE__SQL_ALCHEMY_CONN: ${STR_BD_CONN}
       AIRFLOW__CORE__EXECUTOR: LocalExecutor

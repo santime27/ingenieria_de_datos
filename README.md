@@ -75,3 +75,20 @@ docker compose up -d
 se deben tener creadas las carpetas "dags","logs","config","plugins" en un directorio llamado "airflow".
 
 mysql+mysqlconnector://root:Santiago.Meneses2025.*@mysql-db-1:3306/airflow
+
+airflow-init-1     |   File "/home/airflow/.local/bin/airflow", line 5, in <module>
+airflow-init-1     |     from airflow.__main__ import main
+airflow-init-1     |   File "/home/airflow/.local/lib/python3.9/site-packages/airflow/__init__.py", line 74, in <module>
+airflow-init-1     |     settings.initialize()
+airflow-init-1     |   File "/home/airflow/.local/lib/python3.9/site-packages/airflow/settings.py", line 790, in initialize
+airflow-init-1     |     configure_orm()
+airflow-init-1     |   File "/home/airflow/.local/lib/python3.9/site-packages/airflow/settings.py", line 483, in configure_orm
+airflow-init-1     |     engine = create_engine(SQL_ALCHEMY_CONN, connect_args=connect_args, **engine_args, future=True)
+airflow-init-1     |   File "<string>", line 2, in create_engine
+airflow-init-1     |   File "/home/airflow/.local/lib/python3.9/site-packages/sqlalchemy/util/deprecations.py", line 375, in warned
+airflow-init-1     |     return fn(*args, **kwargs)
+airflow-init-1     |   File "/home/airflow/.local/lib/python3.9/site-packages/sqlalchemy/engine/create.py", line 544, in create_engine
+airflow-init-1     |     dbapi = dialect_cls.dbapi(**dbapi_args)
+airflow-init-1     |   File "/home/airflow/.local/lib/python3.9/site-packages/sqlalchemy/dialects/mysql/mysqlconnector.py", line 129, in dbapi
+airflow-init-1     |     from mysql import connector
+airflow-init-1     | ModuleNotFoundError: No module named 'mysql'
