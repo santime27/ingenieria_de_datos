@@ -73,3 +73,5 @@ docker compose up -d
 # APACHE AIRFLOW
 
 se deben tener creadas las carpetas "dags","logs","config","plugins" en un directorio llamado "airflow".
+
+mysql+mysqlconnector://root:Santiago.Meneses2025.*@mysql-db-1:3306/airflow
