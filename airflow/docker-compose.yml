@@ -16,7 +16,7 @@ services:
       - .env
     container_name: airflow_webserver
     restart: always
-    command: webserver
+    command: ["/bin/bash", "-c", "pip install mysql-connector-python && airflow webserver"]
     environment:
       AIRFLOW__CORE__EXECUTOR: LocalExecutor
       AIRFLOW__CORE__SQL_ALCHEMY_CONN: ${STR_BD_CONN}
@@ -38,7 +38,7 @@ services:
     env_file:
       - .env
     restart: always
-    command: scheduler
+    command: ["/bin/bash", "-c", "pip install mysql-connector-python && airflow scheduler"]
     environment:
       AIRFLOW__CORE__SQL_ALCHEMY_CONN: ${STR_BD_CONN}
       AIRFLOW__CORE__EXECUTOR: LocalExecutor
