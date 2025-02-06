@@ -23,9 +23,11 @@ services:
       AIRFLOW__CORE__LOAD_EXAMPLES: False
       AIRFLOW__WEBSERVER__EXPOSE_CONFIG: True
     volumes:
-      - /data/airflow/dags/ETL_HTMLProcess.py:/dags/ETL_HTMLProcess.py
-      - /data/airflow/logs:/logs
-      - /data/airflow/plugins:/plugins
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+      - ./config:/opt/airflow/config
+      - /root/miniconda3/envs:/root/miniconda3/envs
     ports:
       - "8080:8080"
     depends_on:
@@ -51,5 +53,7 @@ networks:
   cluster-datos:
     external: true
 
+volumes:
+  mysql_data:
 
     
